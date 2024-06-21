@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <ytd-notification-topbar-button-renderer
+        class="style-scope ytd-masthead"><!--css-build:shady--><!--css-build:shady--><yt-icon-button id="icon"
+            class="style-scope ytd-notification-topbar-button-renderer"
+            role="button"><!--css-build:shady--><!--css-build:shady--><button id="button" class="style-scope yt-icon-button"
+                aria-label="Notifications">
+                <yt-icon-badge-shape>
+                    <div title="Notifications"
+                        class="Notifications">
+                        <div class="yt-spec-icon-badge-shape__icon"><yt-icon
+                                style=""><!--css-build:shady--><!--css-build:shady--><yt-icon-shape
+                                    class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape">
+                                        <div style="width: 100%; height: 100%; fill: currentcolor;"><svg
+                                                xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                                                height="74" viewBox="0 0 24 24" width="74" focusable="false"
+                                                style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                                                <path
+                                                    d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z">
+                                                </path>
+                                            </svg></div>
+                                    </icon-shape></yt-icon-shape></yt-icon></div>
+                    </div>
+                </yt-icon-badge-shape>
+            </button><yt-interaction id="interaction"
+                class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css-build:shady-->
+                <div class="stroke style-scope yt-interaction"></div>
+                <div class="fill style-scope yt-interaction"></div>
+            </yt-interaction></yt-icon-button>
+        <tp-yt-paper-tooltip class="style-scope ytd-notification-topbar-button-renderer" role="tooltip" tabindex="-1"
+            style="left: 339.984px; top: 62px;"><!--css-build:shady-->
+            <div id="tooltip" class="style-scope tp-yt-paper-tooltip hidden" style-target="tooltip">
+               
+            </div>
+        </tp-yt-paper-tooltip>
+    </ytd-notification-topbar-button-renderer>
+        <h1 class="heading">You don't have any alarms</h1>
+        <p class="pa">select "+" below to add new alarm.</p>
+        <div class="btn">
+            <div class="btns">
+                <span></span>
+                <input type="button" title="Add an alarm" value="+">
+            </div>
+        </div>
+        <div class="setcontainer">
+            <div class="setapp">
+                <h1 class="heading">Add new alarm</h1>
+                <div class="timezone">
+                    <div class="upbtns">
+                        <div class="btn1"></div>
+                        <div class="btn2"></div>
+                        <div class="btn2"></div>
+                    </div>
+                    <div class="time">07:50:AM</div>
+                    <div class="downbtns">
+                        <div class="btn1"></div>
+                        <div class="btn2"></div>
+                        <div class="btn3"></div>
+                    </div>
+                </div>
+                <div class="name">
+                    <input type="checkbox" name="" id="">
+                    <div class="alarmName" placeholder="alarm name" contenteditable="true">alarm name</div>
+                </div>
+                <div class="RP">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Repeat alarm</label>
+                </div>
+                <div class="days">
+                    <div class="mo">m</div>
+                    <div class="tu">tu</div>
+                    <div class="we">we</div>
+                    <div class="th">th</div>
+                    <div class="fri">fri</div>
+                    <div class="sa">sa</div>
+                    <div class="su">su</div>
+                </div>
+                <div class="alramcrime" title="alram crimes"></div>
+                <div class="time-duration"></div>
+                <div class="functionbtns">
+                    <input type="button" value="save">
+                    <input type="button" value="cancel">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
