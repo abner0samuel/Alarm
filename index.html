@@ -44,10 +44,36 @@
     </ytd-notification-topbar-button-renderer>
         <h1 class="heading">You don't have any alarms</h1>
         <p class="pa">select "+" below to add new alarm.</p>
+        <p>#</p>
         <div class="btn">
             <div class="btns">
                 <span></span>
                 <input type="button" title="Add an alarm" value="+">
+            </div>
+        </div>
+        <div class="alarmtime">
+            <!-- <div class="clock">
+                <div class="heading">
+                    <h1 class="time">09:33 <span>pm</span></h1>
+                    <button type="button"><span></span><span></span></button>
+                </div>
+                <p class="text"><span>7</span> in hours,<span>45</span> minutes </p>
+                <div class="alarmname">alarm</div>
+                <div class="days">
+                    <div class="mo">m</div>
+                    <div class="tu">tu</div>
+                    <div class="we">we</div>
+                    <div class="th">th</div>
+                    <div class="fri">fri</div>
+                    <div class="sa">sa</div>
+                    <div class="su">su</div>
+                </div>
+            </div> -->
+            <div class="btn">
+                <div class="btns btn2">
+                    <span></span>
+                    <input type="button" title="Add an alarm" value="+">
+                </div>
             </div>
         </div>
         <div class="setcontainer">
@@ -55,20 +81,91 @@
                 <h1 class="heading">Add new alarm</h1>
                 <div class="timezone">
                     <div class="upbtns">
-                        <div class="btn1"></div>
-                        <div class="btn2"></div>
-                        <div class="btn2"></div>
+                        <div class="btn1">🔼</div>
+                        <div class="btn2">🔼</div>
+                        <div class="btn3">🔼</div>
                     </div>
-                    <div class="time">07:50:AM</div>
+                    <div class="time"><div id="hour" class="hour">00</div>: <div class="minute">00</div>: <div class="am-pm">AM
+
+                    </div></div>
                     <div class="downbtns">
-                        <div class="btn1"></div>
-                        <div class="btn2"></div>
-                        <div class="btn3"></div>
+                        <div class="btn1">🔽</div>
+                        <div class="btn2">🔽</div>
+                        <div class="btn3">🔽</div>
                     </div>
                 </div>
                 <div class="name">
                     <input type="checkbox" name="" id="">
-                    <div class="alarmName" placeholder="alarm name" contenteditable="true">alarm name</div>
+                    <div class="alarmName" title="Alarm name" contenteditable="true">alarm name</div>
+                </div>
+                <div class="RP">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox">Repeat alarm</label>
+                </div>
+                <div class="days">
+                    <div class="mo">m</div>
+                    <div class="tu">tu</div>
+                    <div class="we">we</div>
+                    <div class="th">th</div>
+                    <div class="fri">fri</div>
+                    <div class="sa">sa</div>
+                    <div class="su">su</div>
+                </div>
+                <div class="alramcrime" title="alram crimes">
+                    <select name="inner"class="inner">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        <option value="6"></option>
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                    </select>
+                </div>
+                <div class="time-duration" title="Snooze Time">
+                    <select name="inner" id="name">
+                        <option value="Disabled">Disabled</option>
+                        <option value="5">5 minutes</option>
+                        <option value="10">10 minutes</option>
+                        <option value="20">20 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="1">1 hours</option>
+                    </select>
+                </div>
+                <div class="functionbtns">
+                    <input class="savebtn" type="button" value="save">
+                    <input class="cancelbtn" type="button" value="cancel">
+                </div>
+            </div>
+        </div>
+         <!-- for editing each alarm -->
+        <div class="editsetcontainer">"
+            <div class="setapp">
+                <div class="heading2">
+                    <h1 class="heading">Edit alarm</h1>
+                    <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a"/></defs><use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a"/></svg>
+                </div>
+                <div class="timezone">
+                    <div class="upbtns">
+                        <div class="btn1">🔼</div>
+                        <div class="btn2">🔼</div>
+                        <div class="btn3">🔼</div>
+                    </div>
+                    <div class="time"><div id="hour" class="hour">00</div>: <div class="minute">00</div>: <div class="am-pm">AM
+
+                    </div></div>
+                    <div class="downbtns">
+                        <div class="btn1">🔽</div>
+                        <div class="btn2">🔽</div>
+                        <div class="btn3">🔽</div>
+                    </div>
+                </div>
+                <div class="name">
+                    <input type="checkbox" name="" id="">
+                    <div class="alarmName" title="Alarm name" contenteditable="true">alarm name</div>
                 </div>
                 <div class="RP">
                     <input type="checkbox" name="checkbox" id="checkbox">
@@ -84,14 +181,24 @@
                     <div class="su">su</div>
                 </div>
                 <div class="alramcrime" title="alram crimes"></div>
-                <div class="time-duration"></div>
+                <div class="time-duration" title="Snooze Time">
+                    <select name="inner" id="name">
+                        <option value="Disabled">Disabled</option>
+                        <option value="5">5 minutes</option>
+                        <option value="10">10 minutes</option>
+                        <option value="20">20 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="1">1 hours</option>
+                    </select>
+                </div>
                 <div class="functionbtns">
-                    <input type="button" value="save">
-                    <input type="button" value="cancel">
+                    <input class="savebtn" type="button" value="save">
+                    <input class="cancelbtn" type="button" value="cancel">
                 </div>
             </div>
         </div>
         
+       
     </div>
     <script src="app.js"></script>
 </body>

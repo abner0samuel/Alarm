@@ -3,6 +3,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+    --mean-color:rgba(15, 14, 12, 0.993);
+    --text-color:white;
+    --btn-color:rgb(255, 145, 0);
+    --hover-color: rgba(67, 65, 61, 0.993);
+    --setapp-color:rgb(21, 21, 22);
+}
 .container{
     width: 100%;
     height: 100vh;
@@ -10,14 +17,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(15, 14, 12, 0.993);
+    background-color: var(--mean-color);
     gap: 15px;
 }
 .container .style-scope .Notifications{
-    background-color:rgba(15, 14, 12, 0.993);
+    background-color:var(--mean-color);
     gap: 15px;
     border: none;
-    color: white;
+    color: var(--text-color);
     font-size: 10rem;
 }
 .container .style-scope{
@@ -25,16 +32,16 @@
     font-size: 5rem;
 }
 .container > .heading{
-    color: white;
+    color: var(--text-color);
     font-size: 2.5rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 .container > .pa{
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.btn{
+.container > .btn{
     width: 100%;
     height: 100%;
     top: 0;
@@ -44,9 +51,10 @@
     align-items: end;
     padding: 20px;
     gap: 10px;
+    
 
 }
-.btns{
+.container > .btn>.btns{
     width: 100px;
     height: 50px;
     background-color: rgba(10, 9, 9, 0.836);
@@ -58,7 +66,7 @@
     padding: 5px;
     overflow: hidden;
 }
-.btns > span{
+.container > .btn>.btns > span{
     width: 5px;
     height: 30px;
     background-color: black ;
@@ -66,49 +74,79 @@
 border-right: 1px solid  rgb(220, 250, 220);
 border-left: 1px solid  rgb(220, 250, 220);
 }
-.btns > input{
+.container > .btn>.btns > input{
     padding: 0;
     height: 3.5rem;
     width: 2rem;
     font-size: 3rem;
-    border: none;
+    /* border: none; */
     background-color: transparent;
     border-radius: 15px;
-    color: white;
+    color: var(--text-color);
     font-family: 'Times New Roman', Times, serif;
+
 }
-.btns > input:hover{
-    background-color: rgba(15, 14, 12, 0.993);;
+.container > .btn>.btns > input:hover{
+    background-color: var(--mean-color);;
 }
 /* stying the setapp */
+.editsetcontainer{   
+    top: 0;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.685);
+}
+.editsetcontainer>.setapp>.heading2{
+    display: flex;
+    justify-content: space-between;
+}
 .setcontainer{
     top: 0;
     position:absolute;
     width: 100%;
     height: 100%;
     display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.685);
 }
+.editsetcontainer>.setapp,
 .setapp{
-    width: 300px;
+    width: 400px;
     height: 550px;
-   background-color: rgb(21, 21, 22);
+   background-color: var(--setapp-color);
    display: flex;
    flex-direction: column;
    /* align-items: center; */
    justify-content: space-around;
    border-radius: 7px;
    padding: 20px;
+   margin: 20px auto;
+   z-index: 5;
 }
+.editsetcontainer>.setapp>.heading2>.heading,
 .setapp> .heading{
     font-size: 1.5rem;
-    color: white;
+    color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
 }
+@media screen and (max-width:480px) {
+    .setapp{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
 .setapp > .timezone{
-    /* width: 90%; */
+
     font-size: 1.5rem;
     margin: 10px auto;
     display: flex;
@@ -120,9 +158,23 @@ border-left: 1px solid  rgb(220, 250, 220);
     width: 100%;
     display: flex;
     align-items: center;
-    color: white;
+    color: var(--text-color);
     font-size: 3rem;
     font-family:Arial, Helvetica, sans-serif ;
+}
+.setapp > .timezone >.upbtns>.btn1,
+.setapp > .timezone >.upbtns>.btn2,
+.setapp > .timezone >.upbtns>.btn3,
+.setapp > .timezone >.downbtns>.btn1,
+.setapp > .timezone >.downbtns>.btn2,
+.setapp > .timezone >.downbtns>.btn3{
+    cursor: pointer;
+}
+.setapp > .timezone >.downbtns,
+.setapp > .timezone >.upbtns{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 .setapp>.name{
     display: flex; 
@@ -131,15 +183,239 @@ border-left: 1px solid  rgb(220, 250, 220);
 .setapp>.name> .alarmName{
     width: 80%;
     height: 35px;
-    background-color: rgba(15, 14, 12, 0.993);
+    background-color: var(--mean-color);
     display: flex;
     align-items: center;
     padding: 2px;
     font-size: 1.3rem;
-    color: white;
+    color: var(--text-color);
     font-family:Arial, Helvetica, sans-serif ;
-
+    border-radius: 3px;
+    margin-left: 5px;
+    border-bottom: 1px solid var(--btn-color);
+    transition: all ease-in-out 1s;
 }
-.setapp>.name> .alarmName:checked{
+.setapp>.name> .alarmName:hover{
+    background-color: var(--hover-color);
     content:  "abner";
 }
+.setapp > .RP{
+    margin: 10px auto;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 3px;
+}
+.setapp > .RP> label{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+.setapp > .RP> input{
+    font-size: 3rem;
+}
+.setapp>.days{
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    gap: 5px;
+}
+.setapp>.days> div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--btn-color);
+    border-radius: 50%;
+    color: var(--btn-color);
+}
+.setapp>.days> div:hover{
+    background-color: var(--hover-color);
+}
+.setapp> .alramcrime, .setapp >.time-duration{
+    width: 90%;
+    height: 40px;
+    background-color: var(--mean-color);
+    margin: 0px auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* .setapp> .alramcrime, .setapp >.time-duration>.inner :op */
+.setapp> .alramcrime:hover, .setapp >.time-duration:hover{
+    background-color: var(--hover-color);
+}
+.setapp>.functionbtns{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.setapp > .alramcrime > select,
+.setapp > .time-duration > select{
+    width: 100%;
+    background-color: var(--mean-color);
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    border: none;
+
+}
+.am{
+    font-size: 1rem;
+}
+.setapp> .alramcrime > select:hover,
+.setapp > .time-duration > select:hover{
+    background-color: var(--hover-color);
+}
+.setapp>.functionbtns>input{
+    width: 150px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border: none;
+}
+.setapp>.functionbtns> .savebtn{
+    background-color: var(--btn-color);
+    color:var(--mean-color);
+}
+.setapp>.functionbtns> .savebtn:hover{
+    background-color: rgba(255, 145, 0, 0.932);
+    box-shadow: 0px 0px 5px var(--btn-color);
+}
+.setapp>.functionbtns>.cancelbtn{
+    background-color:var(--mean-color);
+    color: var(--text-color);
+}
+.setapp>.functionbtns>.cancelbtn:hover{
+    background-color: var(--hover-color);
+}
+.alarmtime{
+    top: 0;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color:var(--hover-color);
+    display: flex;
+    display: none;
+    overflow-y: scroll;
+}
+@media screen and 
+(max-width:500px) {
+    .alarmtime{
+        display: grid;
+        grid-template-columns: repeat(1,auto);
+        display: none;
+    }
+    .alarmtime > .clock{
+        width: 90%;
+    }
+}
+
+.alarmtime> .clock{
+    width:350px;
+    height: 150px;
+    background-color: var(--setapp-color);
+    margin:10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+.alarmtime> .clock >.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alarmtime> .clock >.heading>.time{
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+.alarmtime> .clock >.heading>.time> span{
+    font-size: 1rem;
+}
+.alarmtime> .clock >.heading>button{
+    width: 35px;
+    height: 18px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: var(--mean-color);
+    border: 1px solid var(--text-color);
+    padding: 2px;
+    cursor: pointer;
+
+}
+.alarmtime> .clock >.heading>button >span{
+    width: 13px;
+    height: 13px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+.alarmtime> .clock >.text{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+.alarmtime> .clock >.alarmname{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--hover-color);
+}
+.alarmtime> .clock > .days{
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    color: var(--hover-color);
+}
+
+.alarmtime>.btn{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 20px;
+    gap: 10px;
+}
+ .alarmtime>.btn > .btns{
+    width: 100px;
+    height: 50px;
+    background-color: rgba(10, 9, 9, 0.836);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    border:1px solid rgb(220, 250, 220);
+    padding: 5px;
+    overflow: hidden;
+    position: fixed;
+}
+.alarmtime>.btn>.btns >span{
+    width: 5px;
+    height: 30px;
+    background-color: black ;
+    rotate: 45deg;
+border-right: 1px solid  rgb(220, 250, 220);
+border-left: 1px solid  rgb(220, 250, 220);
+}
+.alarmtime>.btn>.btns>input{
+    padding: 0;
+    height: 3.5rem;
+    width: 2rem;
+    font-size: 3rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+    color: var(--text-color);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.alarmtime>.btn>.btns >input:hover{
+    background-color: var(--mean-color);;
+} 
